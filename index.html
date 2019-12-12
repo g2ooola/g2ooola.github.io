@@ -1,0 +1,78 @@
+<html>
+  <head>
+    <style>
+      div {
+        height: 200px;
+        border: solid 2px #cc77aa;
+        margin: 25px;
+        padding: 25px;
+        background: #c78650;
+      }
+      div:nth-child(odd) {
+        background: #776543;
+      }
+      a {
+        /*display: block;*/
+        font-size: 8px;
+      }
+      a:hover {
+        font-size: 24px;
+      }
+      #menu-center {
+        vertical-align: middle;
+        display: inline-block;
+        padding: 0;
+        margin: 0;
+        border: 0;
+        background-color: #00000000;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="d1">
+      d1
+      將位置凍結在畫面某處 :<br>
+      position: fixed;<br><br>
+
+      指定 fixed 的位置 :<br>
+      right / left : 距離畫面最 右/左 多少 px<br>
+      top / bottom : 距離畫面最 右/左 多少 px<br><br>
+
+      範例:<br>
+      &lt;div style="position:fixed; right:0px; top: 200px; width: 200px; height: 200px; background: #cccccc">&lt;/div>
+    </div>
+    <div id="d2">
+      d2
+      滑鼠滑過時的 css : hover<br>
+      範例 : 滑鼠滑過 div 時, 將 div 的背景顏色改變<br><br>
+
+      &lt;head><br>
+        div:hover {
+          background: #cccccc;
+        }
+      &lt;/head><br>
+
+    </div>
+    <div id="d3">
+      d3<br>
+      奇偶數的 css<br>
+      <br>
+      &lt;head><br>
+        div:nth-child(odd) {
+          background: #335577
+        }
+      &lt;head><br>
+    </div>
+    <div id="d4">d4</div>
+    <div id="d5">d5</div>
+    <div id="d6" style="position:fixed; right:0; top:200px; width:40px; padding:0; margin:0; background:#cccccc; border-color: #33cc33">
+      <div id="menu-center">
+        <a href="#d1">d1</a><br>
+        <a href="#d2">d2</a><br>
+        <a href="#d3">d3</a><br>
+        <a href="#d4">d4</a><br>
+        <a href="#d5">d5</a><br>
+      </div>
+    </div>
+  </body>
+</html>
