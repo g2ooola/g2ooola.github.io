@@ -1,15 +1,19 @@
 <html>
   <head>
     <style>
+      body {
+        background-color: #ccaeae;
+      }
       div {
-        height: 200px;
+        min-height: 200px;
         border: solid 2px #cc77aa;
         margin: 25px;
         padding: 25px;
         background: #c78650;
+        border-radius: 10px;
       }
       div:nth-child(odd) {
-        background: #776543;
+        background: #9e8451;
       }
       a {
         /*display: block;*/
@@ -18,6 +22,14 @@
       a:hover {
         font-size: 24px;
       }
+      #d6 {
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+        width:40px;
+      }
+      /*#d6:hover {
+        width: 65px;
+      }*/
       #menu-center {
         vertical-align: middle;
         display: inline-block;
@@ -65,10 +77,14 @@
     </div>
     <div id="d4">
       d4
-      hi, this is d4
+      way to embed youtube<br>
+      <iframe width="640" height="360" src="https://www.youtube.com/embed/L-hwm0blFwE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
-    <div id="d5">d5</div>
-    <div id="d6" style="position:fixed; right:0; top:200px; width:40px; padding:0; margin:0; background:#cccccc; border-color: #33cc33">
+    <div id="d5">
+      d5<br>
+      <span style="color:#9e8451">oh, what the ...</span>
+    </div>
+    <div id="d6" style="position:fixed; right:0; top:200px;  padding:0; margin:0; background:#cccccc; border-color: #33cc33">
       <div id="menu-center">
         <a href="#d1">d1</a><br>
         <a href="#d2">d2</a><br>
