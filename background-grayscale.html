@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <style>
+    .container {
+      z-index: 2;
+      overflow-y: scroll;
+    }
+    .fit-window {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      padding: 0;
+      margin: 0;
+      top: 0;
+      left: 0;
+    }
+    .background {
+      background-image: url('https://resources.matcha-jp.com/resize/720x2000/2019/09/13-85979.jpeg');
+      background-size: cover;
+      z-index: 1;
+      filter: grayscale(70%);
+    }
+
+    .tmp {
+      width: 200px;
+      height: 200px;
+      margin: 20px;
+      border: solid 4px #f38551;
+    }
+  </style>
+</head>
+<body>
+  <div class="background fit-window"></div>
+  <div class="container fit-window">
+    <div class="tmp"></div>
+    <div class="tmp"></div>
+    <div class="tmp"></div>
+    <div class="tmp"></div>
+    <div class="tmp"></div>
+    <div class="tmp"></div>
+  </div>
+</body>
+</html>
