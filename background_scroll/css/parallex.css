@@ -1,0 +1,34 @@
+.parallax-container {
+  position: relative;
+  /*width: 100%;
+  height: 100%;*/
+  overflow-x: hidden;
+  overflow-y: scroll;
+  perspective: 8px;
+  perspective-origin: 0%;
+  display: flex;
+}
+.parallax-background {
+  /*position: absolute;
+  top: 0;
+  left: 0;*/
+  width: 100vw;
+  /*height: 100%;*/
+  transform: translateZ(0px);
+  display: block;
+
+  /*top: -100px;
+  width: 125vw;
+  height: 245vh;
+  transform: translateZ(-2px);*/
+}
+
+
+.parallax-foreground {
+  margin-top: auto;
+  margin-bottom: 50px;
+  transform-origin: 0;
+  transform: translateZ(1px);
+
+  /*transform: translateZ(0px);*/
+}
