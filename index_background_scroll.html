@@ -1,0 +1,151 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="./css/parallex.css">
+    <style>
+      body {
+        /*background-color: #ccaeae;*/
+        margin: 0;
+      }
+      #main-container div {
+        min-height: 200px;
+        border: solid 2px #cc77aa55;
+        margin: 25px;
+        padding: 25px;
+        background: #c78650;
+        border-radius: 10px;
+      }
+      #main-container div:nth-child(odd) {
+        background: #9e845155;
+      }
+      a {
+        /*display: block;*/
+        font-size: 8px;
+      }
+      a:hover {
+        font-size: 24px;
+      }
+      #d6 {
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+        width:40px;
+      }
+      /*#d6:hover {
+        width: 65px;
+      }*/
+      #menu-center {
+        vertical-align: middle;
+        display: inline-block;
+        padding: 0;
+        margin: 0;
+        border: 0;
+        background-color: #00000000;
+      }
+
+      .background_image {
+        background-image: url('./background.jpg');
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+      }
+
+      body {
+        width: 100vw;
+        height: 100vh;
+        background-image: url('./background.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position-y: 0%;
+      }
+
+      #main-container {
+        width: 100vw;
+        height: 100vh;
+        overflow-x: hidden;
+        overflow-y: scroll;
+      }
+    </style>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+
+        var main_container = document.getElementById("main-container");
+        main_container.addEventListener("scroll", function(){
+          scrollBackgroundImage();
+        });
+      })
+
+      var scrollBackgroundImage = function(){
+        var container = document.getElementById("main-container");
+        var total_height = container.scrollHeight - container.clientHeight;
+        var percent = container.scrollTop / total_height;
+        console.log(percent);
+
+        var body = document.body;
+        body.style.backgroundPositionY = "" + percent * 100 + "%";
+      }
+    </script>
+  </head>
+  <body>
+    <div id="main-container">
+      <div id="d1">
+        d1
+        將位置凍結在畫面某處 :<br>
+        position: fixed;<br><br>
+
+        指定 fixed 的位置 :<br>
+        right / left : 距離畫面最 右/左 多少 px<br>
+        top / bottom : 距離畫面最 右/左 多少 px<br><br>
+
+        範例:<br>
+        &lt;div style="position:fixed; right:0px; top: 200px; width: 200px; height: 200px; background: #cccccc">&lt;/div>
+      </div>
+
+      <div id="d2">
+        d2
+        滑鼠滑過時的 css : hover<br>
+        範例 : 滑鼠滑過 div 時, 將 div 的背景顏色改變<br><br>
+
+        &lt;head><br>
+          div:hover {
+            background: #cccccc;
+          }
+        &lt;/head><br>
+      </div>
+
+      <div id="d3">
+        d3<br>
+        奇偶數的 css<br>
+        <br>
+        &lt;head><br>
+          div:nth-child(odd) {
+            background: #335577
+          }<br>
+        &lt;head><br>
+      </div>
+
+      <div id="d4">
+        d4
+        way to embed youtube<br>
+        <iframe width="640" height="360" src="https://www.youtube.com/embed/L-hwm0blFwE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+
+      <div id="d5">
+        d5<br>
+        <span style="color:#9e8451">oh, what the ...</span>
+      </div>
+
+      <div id="d6" style="position:fixed; right:0; top:200px;  padding:0; margin:0; background:#cccccc; border-color: #33cc33">
+        <div id="menu-center">
+          <a href="#d1">d1</a><br>
+          <a href="#d2">d2</a><br>
+          <a href="#d3">d3</a><br>
+          <a href="#d4">d4</a><br>
+          <a href="#d5">d5</a><br>
+        </div>
+      </div>
+
+      <div></div>
+      <div></div>
+    </div>
+  </body>
+</html>
