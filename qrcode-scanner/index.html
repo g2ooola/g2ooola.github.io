@@ -1,20 +1,25 @@
 <html>
-  <header>
+  <head>
+    <!-- ref : https://blog.huli.tw/2018/10/13/pwa-in-action/ -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="./mystyle.css">
+    <!-- <meta name="apple-mobile-web-app-capable" content="yes"> -->
+
+    <link rel="manifest" href="./manifest07.json">
+    <link rel="stylesheet" href="./mystyle07.css">
     <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="qrcode.js"></script>
-  </header>
+    <script src="qrcode_07.js"></script>
+  </head>
   <body>
     <div id="qr-reader-div"></div>
     <div id="tool-zone">
       <div id="tool-zone-inner">
         <div id="send_context" class="button">
-          <a id="target_button" href="">link text</a>
+          <a id="target_button" href="">Open07</a>
         </div>
         <div id="reload" class="button">Reload</div>
       </div>
     </div>
+    <div id="options_button"></div>
   </body>
 </html>
