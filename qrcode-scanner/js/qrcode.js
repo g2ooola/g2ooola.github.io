@@ -102,6 +102,7 @@ $(function() {
 
   qr.start('init');
 
+  // ===
   const qr_page = new QrPage;
   qr_page.init();
 });
