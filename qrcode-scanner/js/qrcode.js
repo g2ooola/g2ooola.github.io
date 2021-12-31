@@ -28,10 +28,12 @@ const StatusHandler = function(){
   this.set_resule = function(link) {
     $("#target_button").attr("href", link);
     $("#target_button").removeClass("empty");
+    $("#qr-content").html(link);
   }
   this.clear_result = function() {
     $("#target_button").removeAttr("href");
     $("#target_button").addClass("empty");
+    $("#qr-content").html("");
   }
 }
 
@@ -61,10 +63,12 @@ const QrWidget = function(){
     this.html5QrCode.start({ facingMode: "environment" }, this.config, this.qrCodeSuccessCallback);
     this.is_start = true;
     this.statusHandler.clear_result();
+    $("body").removeClass("no-camara");
   };
   this.stop = function(){
     this.html5QrCode.stop().then((ignore) => {
       this.is_start = false;
+      $("body").addClass("no-camara");
     }).catch((err) => {
       // Stop failed, handle it.
       alert(err)
@@ -92,7 +96,7 @@ $(function() {
     qr.reloadQrcode();
   });
 
-  $("#options_button").on( "click", function() {
+  $("#camara_button").on( "click", function() {
     qr.weightSwitch();
   });
 
