@@ -76,7 +76,16 @@ const QrWidget = function(){
   };
 }
 
-
+const QrPage = function() {
+  this.init = function() {
+    $("#qr_page").on("click", function(){
+      $("body").removeClass("show_qr");
+    });
+    $("#share_button").on("click", function(){
+      $("body").addClass("show_qr");
+    });
+  }
+}
 
 
 
@@ -92,4 +101,7 @@ $(function() {
   });
 
   qr.start('init');
+
+  const qr_page = new QrPage;
+  qr_page.init();
 });

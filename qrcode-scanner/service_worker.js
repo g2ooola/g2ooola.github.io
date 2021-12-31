@@ -17,10 +17,6 @@ self.addEventListener('install', (event)=> {
     event.waitUntil(caches.open(key).then(cache => cache.add(file)));
   });
 
-  // event.waitUntil(caches.open(key).then(cache => cache.add('./css/mystyle.css')));
-  // event.waitUntil(caches.open(key).then(cache => cache.add('./js/qrcode.js')));
-  // event.waitUntil(caches.open(key).then(cache => cache.add('./lib/html5-qrcode@2.1.6.min.js')));
-  // event.waitUntil(caches.open(key).then(cache => cache.add('./lib/jquery-3.5.1.min.js')));
 });
 
 self.addEventListener('activate', (event)=> {
@@ -37,13 +33,6 @@ self.addEventListener('fetch', (event)=> {
         event.respondWith(caches.match(file));
         return;
       }
-      // event.waitUntil(caches.open(key).then(cache => cache.add(file)));
     });
   }
-
-  // // serve the horse SVG from the cache if the request is
-  // // same-origin and the path is '/dog.svg'
-  // if (url.origin == location.origin && url.pathname == '/dog.svg') {
-  //   event.respondWith(caches.match('/cat.svg'));
-  // }
 });
