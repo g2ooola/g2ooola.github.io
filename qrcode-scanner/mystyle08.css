@@ -2,11 +2,13 @@ body {
   margin: 0;
   padding: 0;
   background: #cccccc;
+  width: 100vw;
 }
 
 :root {
   --button-size: 100px;
   --tool-zone-height: 150px;
+  --qr-content-height: 20px;
 }
 
 #options_button {
@@ -21,7 +23,7 @@ body {
 
 
 #qr-reader-div {
-  width: 100vw;
+  width: 100%;
   /*height: 300px;*/
   height: calc(100vh - var(--tool-zone-height));
   background: #777777;
@@ -33,7 +35,7 @@ body {
 }
 
 #tool-zone {
-  width: 100vw;
+  width: 100%;
   height: var(--tool-zone-height);
   position: fixed;
   bottom: 0;
@@ -41,9 +43,17 @@ body {
   /*display: float;*/
 }
 
+#qr-content {
+  width: 100%;
+  height: var(--qr-content-height);
+  background: #cccccc;
+  overflow: hidden;
+  font-size: 14px;
+}
+
 #tool-zone-inner {
-  width: 100vw;
-  height: var(--tool-zone-height);
+  width: 100%;
+  height: calc(var(--tool-zone-height) - var(--qr-content-height));
   display: flex;
   justify-content: center;
   align-items: right
@@ -76,6 +86,6 @@ body {
   color: #181919;
 }
 
-.target_button.empty {
+#target_button.empty {
   color: #cccccc;
 }

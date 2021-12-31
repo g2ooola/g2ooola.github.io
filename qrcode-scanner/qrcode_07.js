@@ -41,28 +41,37 @@ const QrWidget = function(){
   this.html5QrCode = new Html5Qrcode("qr-reader-div");
   this.codeHandler = new CodeHandler();
   this.statusHandler = new StatusHandler();
+  this.is_start = false;
+
   this.qrCodeSuccessCallback = (decodedText, decodedResult) => {
-    this.pause();
     const qrText = decodedResult.decodedText;
     const link = this.codeHandler.parse(qrText);
     this.statusHandler.set_resule(link);
+    // this.pause();
+    this.stop();
   };
-  this.reloadQrcodd = function() {
+  this.reloadQrcode = function() {
     this.statusHandler.clear_result();
-    this.resume();
+    // this.resume();
+    this.start();
   }
   this.config = { fps: 10, qrbox: { width: 250, height: 250 } };
 
   this.start = function(){
     this.html5QrCode.start({ facingMode: "environment" }, this.config, this.qrCodeSuccessCallback);
+    this.is_start = true;
+    this.statusHandler.clear_result();
   };
   this.stop = function(){
     this.html5QrCode.stop().then((ignore) => {
-      // QR Code scanning is stopped.
+      this.is_start = false;
     }).catch((err) => {
       // Stop failed, handle it.
       alert(err)
     });
+  };
+  this.weightSwitch = function() {
+    this.is_start ? this.stop() : this.start()
   };
   this.pause = function() {
     this.html5QrCode.pause();
@@ -80,11 +89,11 @@ $(function() {
   const qr = new QrWidget;
 
   $("#reload").on( "click", function() {
-    qr.reloadQrcodd();
+    qr.reloadQrcode();
   });
 
   $("#options_button").on( "click", function() {
-    qr.stop();
+    qr.weightSwitch();
   });
 
   qr.start();
