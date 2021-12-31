@@ -1,8 +1,8 @@
 {
   "name": "QR-Scanner",
   "short_name": "QR-Scan",
-  "theme_color": "#e3dfdb",
-  "background_color": "#181919",
+  "theme_color": "#181919",
+  "background_color": "#e3dfdb",
   "display": "standalone",
   "scope": "/qrcode-scanner/",
   "start_url": "index",
@@ -30,6 +30,12 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
+    },
+    {
+      "src": "img/qr_icon_x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
     }
    
   ]
