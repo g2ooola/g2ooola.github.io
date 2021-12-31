@@ -1,11 +1,5 @@
-// ref https://www.tpisoftware.com/tpu/articleDetails/1221
-
 const CodeHandler = function(){
   this.sms_regex = /(SMSTO):(\d+):(.*)/;
-  // this.start = function(string) {
-  //   const link = this.parse(string);
-  //   this.set_value(link);
-  // }
   this.parse = function(string){
     let regex = this.sms_regex;
     let result = this.sms_regex.exec(string);
@@ -19,9 +13,6 @@ const CodeHandler = function(){
       return string;
     }
   };
-  // this.set_value = function(link) {
-  //   $("#target_button").attr("href", link);
-  // }
 }
 
 const StatusHandler = function(){
@@ -59,10 +50,10 @@ const QrWidget = function(){
   }
   this.config = { fps: 10, qrbox: { width: 250, height: 250 } };
 
-  this.start = function(){
+  this.start = function(state){
     this.html5QrCode.start({ facingMode: "environment" }, this.config, this.qrCodeSuccessCallback);
     this.is_start = true;
-    this.statusHandler.clear_result();
+    if(state != 'init') {this.statusHandler.clear_result();}
     $("body").removeClass("no-camara");
   };
   this.stop = function(){
@@ -100,5 +91,5 @@ $(function() {
     qr.weightSwitch();
   });
 
-  qr.start();
+  qr.start('init');
 });
