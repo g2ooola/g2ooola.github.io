@@ -1,5 +1,5 @@
 const CodeHandler = function(){
-  this.sms_regex = /(SMSTO):(\d+):(.*)/;
+  this.sms_regex = /(SMSTO):(\d+):(.*)/i;
   this.parse = function(string){
     let regex = this.sms_regex;
     let result = this.sms_regex.exec(string);
