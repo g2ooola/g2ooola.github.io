@@ -5,13 +5,15 @@ const cached_files = [
   './lib/html5-qrcode@2.1.6.min.js',
   './lib/jquery-3.5.1.min.js',
   './img/camara.svg',
-  './img/camara-no.svg'
+  './img/camara-no.svg',
+  './img/qr-icon.svg',
+  './img/qr-reader-url.svg'
 ];
 
 
 
 self.addEventListener('install', (event)=> {
-  // console.log('SW V1 installing…');
+  console.log('SW V1 installing…');
 
   cached_files.forEach(file => {
     event.waitUntil(caches.open(key).then(cache => cache.add(file)));
