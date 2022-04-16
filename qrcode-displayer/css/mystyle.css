@@ -1,0 +1,37 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --qr-dev-size: min(80vw, 80vh);
+}
+
+#awful-no-js {
+  text-align: center;
+  font-size: 30px;
+}
+
+#container {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#qrcode-div {
+  width: var(--qr-dev-size);
+  height: var(--qr-dev-size);
+
+  /*為了顯示沒有 QR Code 時的文字*/
+  text-align: center;
+  font-size: 30px;
+  line-height: var(--qr-dev-size);
+}
+
+#qrcode-div img {
+  width: 100%;
+  height: 100%;
+}
